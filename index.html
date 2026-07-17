@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#111827" />
+  <meta name="description" content="Tetris moderno e instalable para escritorio y móvil." />
+  <title>Tetris Zen</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">EXPERIMENTO 28</p>
+        <h1>Tetris Zen</h1>
+        <p class="subtitle">Ordena, encaja y supera tu mejor puntuación.</p>
+      </div>
+      <button id="pauseButton" class="icon-button" type="button" aria-label="Pausar juego">⏸</button>
+    </header>
+
+    <section class="game-layout">
+      <div class="board-card">
+        <canvas id="gameCanvas" width="300" height="600" aria-label="Tablero de Tetris"></canvas>
+        <div id="overlay" class="overlay visible">
+          <div class="overlay-card">
+            <h2 id="overlayTitle">Tetris Zen</h2>
+            <p id="overlayText">Pulsa comenzar para jugar.</p>
+            <button id="startButton" class="primary-button" type="button">Comenzar</button>
+          </div>
+        </div>
+      </div>
+
+      <aside class="side-panel">
+        <section class="stats-card">
+          <div class="stat"><span>Puntaje</span><strong id="scoreValue">0</strong></div>
+          <div class="stat"><span>Nivel</span><strong id="levelValue">1</strong></div>
+          <div class="stat"><span>Líneas</span><strong id="linesValue">0</strong></div>
+          <div class="stat"><span>Récord</span><strong id="highScoreValue">0</strong></div>
+        </section>
+
+        <section class="next-card">
+          <h2>Siguiente pieza</h2>
+          <canvas id="nextCanvas" width="140" height="140" aria-label="Próxima pieza"></canvas>
+        </section>
+
+        <section class="controls-card">
+          <h2>Controles</h2>
+          <div class="touch-grid">
+            <button class="control-button" data-action="left" type="button">←</button>
+            <button class="control-button" data-action="rotate" type="button">⟳</button>
+            <button class="control-button" data-action="right" type="button">→</button>
+            <button class="control-button" data-action="down" type="button">↓</button>
+            <button class="control-button accent" data-action="drop" type="button">⤓</button>
+          </div>
+          <p class="keyboard-help">Teclado: flechas, espacio y P.</p>
+        </section>
+      </aside>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
